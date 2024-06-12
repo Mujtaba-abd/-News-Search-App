@@ -9,16 +9,9 @@
 :root{
 --ff: "Montserrat", sans-serif;
   --colorp: #f9f9f9;
-  --colorp2: #fff;
-  --colora: #ffe537;
   --colora2: #537fe7;
   --colorbody: #1e1e1e;
   --colors: #333;
-  --h1: bold 54px/60px var(--ff);
-  --h2: bold 36px/48px var(--ff);
-  --h3: bold 24px/36px var(--ff);
-  --links: 18px/18px var(--ff);
-  --p: 18px/30px var(--ff);
 }
 
 body{
@@ -35,7 +28,7 @@ body{
 
 a{
     text-decoration: none;
-    color: var(--colorp2);
+    color: var(--colorp);
 }
 
 nav{
