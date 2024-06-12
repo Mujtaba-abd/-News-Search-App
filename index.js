@@ -24,12 +24,17 @@ function displayblogs(articles){
         img.src = articles.urlToImage;
         img.alt = articles.title;
         const title = document.createElement("h2");
-        title.textContent = articles.title;
+        const truncatedTitle = articles.title.length > 30? articles.title.slice(0, 30) + "....." : articles.title;
+        title.textContent = truncatedTitle;
         const description = document.createElement("p");
-        description.textContent = articles.description;
+        const truncatedDec = articles.description.length > 130? articles.description.slice(0, 130) + "....." : articles.description;
+        description.textContent = truncatedDec;
         blogCard.appendChild(img);
         blogCard.appendChild(title);
         blogCard.appendChild(description);
+        blogCard.addEventListener('click', ()=>{
+            window.open(articles.url, "_blank")
+        })
         blogContainer.appendChild(blogCard);
      })
 }
