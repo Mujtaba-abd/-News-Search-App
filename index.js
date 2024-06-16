@@ -1,4 +1,4 @@
-// putint the API in a varibel to use later
+// puting the API in a varibel to use later
 const apikey = 'ca8909f65ac84eabb824275c2366d827';
 
 // geting html elements and storing them in varibels using document.getElementById("The ID of the element")
@@ -16,6 +16,7 @@ async function fetchRandomNews(){
         const response = await fetch(apiUrl);
         //Converting the respinse to json, the awaite whait the response to be converted yo stor it in a varabel named data 
         const data = await response.json();
+        console.log(data)
         return data.articles;
         
     }catch(error){
@@ -39,7 +40,7 @@ searchButton.addEventListener("click", async ()=>{
 
 async function fetchNewsQuery(query){
     try{
-        const apiUrl = `https://newsapi.org/v2/everything?q=${query}&pageSize=10&apikey=${apikey}`;
+        const apiUrl = `https://newsapi.org/v2/everything?q=${query}&pageSize=20&apikey=${apikey}`;
         const response = await fetch(apiUrl);
         const data = await response.json();
         return data.articles;
@@ -90,7 +91,6 @@ function displayblogs(articles){
 (async ()=>{
     try{
         const articles = await fetchRandomNews();
-        console.log(articles)
         displayblogs(articles)
     }catch(error){
         console.error("Error fetching random news", error);
